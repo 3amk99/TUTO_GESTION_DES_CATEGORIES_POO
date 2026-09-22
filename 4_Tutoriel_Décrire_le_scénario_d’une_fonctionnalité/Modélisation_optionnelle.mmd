@@ -1,0 +1,9 @@
+sequenceDiagram
+
+  actor Administrateur
+  participant Système
+
+  Administrateur-)Système: Place order
+  Système-->>Administrateur: Affiche le formulaire
+  Administrateur-)Système: Saisit les informations et valide
+  Système-->>Administrateur: Enregistre et affiche la catégorie
