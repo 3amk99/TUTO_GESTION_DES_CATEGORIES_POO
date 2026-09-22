@@ -1,0 +1,19 @@
+usecase-beta
+
+
+
+Checkout["Blog"]
+
+direction LR
+actor administrator
+administrator -- Gère le conten --Checkout
+
+
+direction LR
+actor Auteur
+Auteur-- Rédige et gère ses articles --Checkout
+
+
+direction LR
+actor Visiteur
+Visiteur-- Consulte les articles publiés --Checkout
