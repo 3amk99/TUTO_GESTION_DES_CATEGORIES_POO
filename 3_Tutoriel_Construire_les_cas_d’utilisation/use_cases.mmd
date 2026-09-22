@@ -1,0 +1,53 @@
+usecase-beta
+
+
+
+P00("consult the categories")
+P01("Add a category")
+P02("change a category")
+P03("delete a category")
+P04("Create an author")
+P05("Create an author")
+P06("Validate an article")
+P07("publish an article")
+
+actor administrator
+
+administrator-->P00
+administrator-->P01
+administrator-->P02
+administrator-->P03
+administrator-->P04
+administrator-->P05
+administrator-->P06
+administrator-->P07
+
+
+
+
+
+
+B00("Add an article")
+B01("modify an unpublished article")
+B02("delete an unpublished article")
+B03("change your profile")
+B04("reset your password")
+
+actor Author
+
+Author-->B00
+Author-->B01
+Author-->B02
+Author-->B03
+Author-->B04
+
+
+
+
+
+
+C00("Consult the articles")
+
+actor Visitor
+
+Visitor-->C00
