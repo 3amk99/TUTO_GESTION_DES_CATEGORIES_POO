@@ -1,0 +1,18 @@
+flowchart LR
+
+subgraph Navigateur_Frontend ["🖥️ Navigateur (Frontend)"]
+index_html[index.html] 
+app_js[app.js] 
+end 
+
+
+subgraph Serveur_Backend ["⚙️ Serveur (Backend)"]
+categories_php[categories.php]
+Base_de_Donnees[(Base de Données)]
+end
+
+index_html -->|1 give places to fill| app_js
+app_js -->| 2 sned request HTTP using fetch| categories_php
+categories_php -->| 3 take data| Base_de_Donnees
+categories_php -->| 4 receive data using , then response => response.json, | app_js
+app_js -->| 5 file the void places / give data| index_html
