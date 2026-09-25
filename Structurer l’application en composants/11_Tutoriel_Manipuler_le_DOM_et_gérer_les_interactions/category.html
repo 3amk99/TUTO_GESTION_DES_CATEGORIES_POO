@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js</title>
+</head>
+
+<body>
+
+    <button id="add_categories_button">
+        +add categorie
+    </button>
+
+    <form id="form_list" hidden>
+
+        <label id="label_name">
+            Enter the name of category:
+        </label>
+        <br><br>
+
+        <input type="text" id="name">
+        <br><br>
+
+        <label id="label_color">
+            Enter the color of category:
+        </label>
+        <br><br>
+
+        <input type="text" id="color">
+        <br><br>
+
+        <button type="submit" id="add_info">
+            add info
+        </button>
+
+        <button type="button" id="cancel_that">
+            cancel that
+        </button>
+
+        <br><br>
+
+    </form>
+
+
+    <table border="1">
+
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Color</th>
+            </tr>
+        </thead>
+
+        <tbody id="table-categories-body">
+        </tbody>
+
+    </table>
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            let button_1 = document.querySelector('#add_categories_button');
+
+            let form_1 = document.querySelector('#form_list');
+
+            let name_1 = document.querySelector('#name');
+
+            let color_1 = document.querySelector('#color');
+
+            let cancel_that_1 = document.querySelector('#cancel_that');
+
+            let table_categories_body =
+                document.querySelector('#table-categories-body');
+
+
+            button_1.addEventListener('click', () => {
+
+                form_1.hidden = false;
+
+                button_1.hidden = true;
+
+            });
+
+
+            form_1.addEventListener('submit', (box_info) => {
+
+                box_info.preventDefault();
+
+
+                table_categories_body.insertAdjacentHTML('beforeend', `
+                    <tr>
+                        <td>${name_1.value}</td>
+                        <td>${color_1.value}</td>
+                    </tr>
+                `);
+
+
+                form_1.reset();
+
+
+                form_1.hidden = true;
+
+
+                button_1.hidden = false;
+
+            });
+
+
+            
+            cancel_that_1.addEventListener('click', () => {
+
+                form_1.reset();
+
+                form_1.hidden = true;
+
+                button_1.hidden = false;
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
